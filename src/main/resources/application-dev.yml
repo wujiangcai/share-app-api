@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  # 数据源类型
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver  # JDBC驱动类
+      url: jdbc:mysql://localhost:3306/db_share?useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8  # 数据库连接URL
+      username: root  # 数据库用户名
+      password: cwj040812  # 数据库密码
+      initial-size: 5  # 初始连接数
+      min-idle: 5  # 最小空闲连接数
+      max-active: 20  # 最大连接数
+      max-wait: 30000  # 最大等待时间（毫秒）
+
+  data:
+    redis:
+      port: 6379  # Redis服务端口
+      host: 127.0.0.1  # Redis服务地址
+      password:  # Redis密码（可选）
+
+    lettuce:
+      pool:
+        min-idle: 10  # Redis连接池最小空闲连接数
+        max-idle: 20  # Redis连接池最大空闲连接数
+        max-active: 100  # Redis连接池最大连接数
